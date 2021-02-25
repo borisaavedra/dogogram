@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block head_content %}
+    <title>Create new post</title>
+{% endblock %}
+
+{% block container %}
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-sm-12 col-md-8 col-lg-6 pt-2 px-5 pb-5" style="margin-top: 6em;" id="auth-container">
+                {% if form.is_valid %}
+                    <div class="alert alert-success mb-4">
+                        The post were published succussefuly
+                    </div>
+                {% endif %}
+
+                <h4 class="my-4">Post a new photo!</h4>
+
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <input type="hidden" name="user" value="{{ user.pk }}" />
+                    <input type="hidden" name="profile" value="{{ profile.pk }}" />
+                    
+                    {# Photo field #}
+                    <div class="form-group">
+                        <label>Choose your photo:</label>
+                        <input
+                        class="form-control {% if form.photo.errors %}is-invalid{% endif %}"
+                        type="file"
+                        name="photo"
+                        placeholder="photo"
+                        required
+                        >
+                        <div class="invalid-feedback">
+                            {% for error in form.photo.errors %}{{ error }}{% endfor %}
+                        </div>
+                    </div>
+                    {# Title field #}
+                    <div class="form-group">
+                        <input
+                            class="form-control {% if form.title.errors %}is-invalid{% endif %}"
+                            type="text"
+                            name="title"
+                            placeholder="Title"
+                            required
+                        >
+                        <div class="invalid-feedback">
+                            {% for error in form.title.errors %}{{ error }}{% endfor %}
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block mt-5">Publish!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

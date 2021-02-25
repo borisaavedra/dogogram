@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="{% static 'img/favicon-16x16.png' %}">
+    {% block head_content %}{% endblock %}
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+    <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script>
+</head>
+<body class="h-100">
+
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-sm-12 col-md-5 col-lg-5 pt-2 pl-5 pr-5 pb-5" id="auth-container">
+                <a href="{% url 'posts:pretty_posts' %}">
+                    <img src="{% static 'img/dogogram_logo.png' %}" class="img-fluid rounded mx-auto d-block pb-4 mt-4" style="max-width: 60%;">
+                </a>
+
+                {% block container %}{% endblock%}
+
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script type="text/javascript">(function(){window['__CF$cv$params']={r:'61e6c3606b3d371e',m:'77525350bbe5cbf544d8abd126dfe72948281242-1612802120-1800-AWvSGNtIU+3RDZAuYw0Kbh4z1NIoLRrrurl4ZSliGmil/PXlyyl4dqAaOhkgZ7qVFZSxcl5MtIHMkMQxrcdMhAeyojCsO2agqWCfE0xfBQSmvc+cfVrsnQ2BPq02ztxt2o9NwwbD3iTGd9PA5wLK8UfEmsPC2U2cGlOx/6OcNAbRh1198Jd6qp+HtDZ96XRFMcqB5KHC3y5KQOKAyWrXjbcU+bTIQ2bbynz6qGe7GDSlPsUMSWljsPvG6fsN5MXcUA==',s:[0x7f193a593d,0x9c44c48dcb],}})();</script>
+</body>
+</html>
