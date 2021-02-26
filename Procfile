@@ -1,1 +1,1 @@
-web: gunicorn dogogram.wsgi
+web: gunicorn dogogram.wsgi:app
