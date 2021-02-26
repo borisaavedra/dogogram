@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ["https://dogogramoficial.herokuapp.com/"]
+ALLOWED_HOSTS = ["dogogramoficial.herokuapp.com"]
 
 
 # Application definition
